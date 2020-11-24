@@ -1,0 +1,9 @@
+[user]
+	email = leykauf@physik.hu-berlin.de
+	name = Bastian Leykauf
+[push]
+	default = simple
+[core]
+	excludesfile = ~/.gitignore_global
+[credential]
+	helper = cache
