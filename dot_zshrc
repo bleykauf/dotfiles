@@ -21,6 +21,10 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
+# Initialize completion system
+autoload -Uz compinit
+compinit
+
 # Skip Oh My Posh initialization for Apple Terminal
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/base.toml)"

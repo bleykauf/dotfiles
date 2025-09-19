@@ -1,0 +1,25 @@
+# Ignore editor/OS cruft
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Ignore chezmoi’s working copy and cache
+/.chezmoitemplates/
+/.chezmoiexternal.toml
+/.chezmoiignore
+/.chezmoiversion
+/chezmoi.yaml
+/chezmoi.yml
+/chezmoi.toml
+/chezmoi.json
+
+# Ignore chezmoi’s state and temp dirs
+/.local/share/chezmoi/*/
+/.cache/chezmoi/*/
+/tmp/chezmoi-* 
+
+# Ignore machine-specific files
+/private_*
+/secret_*
