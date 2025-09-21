@@ -1,0 +1,45 @@
+{
+    "remapKeys": {
+        "inProcess": [
+            {
+                "originalKeys": "121",
+                "newRemapKeys": "173"
+            },
+            {
+                "originalKeys": "122",
+                "newRemapKeys": "174"
+            },
+            {
+                "originalKeys": "91",
+                "newRemapKeys": "164"
+            },
+            {
+                "originalKeys": "123",
+                "newRemapKeys": "175"
+            },
+            {
+                "originalKeys": "164",
+                "newRemapKeys": "91"
+            },
+            {
+                "originalKeys": "92",
+                "newRemapKeys": "165"
+            },
+            {
+                "originalKeys": "165",
+                "newRemapKeys": "92"
+            }
+        ]
+    },
+    "remapKeysToText": {
+        "inProcess": []
+    },
+    "remapShortcuts": {
+        "global": [],
+        "appSpecific": []
+    },
+    "remapShortcutsToText": {
+        "global": [],
+        "appSpecific": []
+    }
+}

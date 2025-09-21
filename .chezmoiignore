@@ -5,3 +5,7 @@ dot_zshrc
 dot_config/karabiner/
 dot_config/kitty/
 {{ end -}}
+
+{{ if ne .chezmoi.os "windows" }}
+AppData/**
+{{ end }}
