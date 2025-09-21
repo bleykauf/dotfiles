@@ -8,7 +8,6 @@ Thumbs.db
 # Ignore chezmoi’s working copy and cache
 /.chezmoitemplates/
 /.chezmoiexternal.toml
-/.chezmoiignore
 /.chezmoiversion
 /chezmoi.yaml
 /chezmoi.yml
@@ -20,6 +19,7 @@ Thumbs.db
 /.cache/chezmoi/*/
 /tmp/chezmoi-* 
 
-# Ignore machine-specific files
+# Ignore machine-specific filesóóó
 /private_*
+
 /secret_*
