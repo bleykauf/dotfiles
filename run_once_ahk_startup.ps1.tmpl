@@ -1,3 +1,4 @@
+{{ if eq .chezmoi.os "windows" -}}
 Write-Host "Creating AHK Startup shortcut..."
 
 $WshShell = New-Object -ComObject WScript.Shell
@@ -13,3 +14,4 @@ $Shortcut.WindowStyle = 7  # Minimized
 $Shortcut.Save()
 
 Write-Host "mac-like-keyboard AutoHotkey shortcut created."
+{{ end -}}
