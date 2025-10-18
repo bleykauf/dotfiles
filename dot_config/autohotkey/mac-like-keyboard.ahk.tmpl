@@ -1,0 +1,26 @@
+﻿{{ if eq .chezmoi.os "windows" -}}
+; I flipped the Alt and Windows key using PowerToys and changed the key caps on my
+; keyboard so that the two windows keys are now right next to the space bar. The goal is
+; to have MacOS like behaviour, i.e. Cmd+C for copy with the Windows key acting as the
+; Cmd key.
+
+#c::Send("^c")          ; Win + C → Copy
+#v::Send("^v")          ; Win + V → Paste
+#x::Send("^x")          ; Win + X → Cut
+#z::Send("^z")          ; Win + Z → Undo
+#f::Send("^f")          ; Win + F → Find
+#a::Send("^a")          ; Win + A → Select All
+#s::Send("^s")          ; Win + S → Save
+#o::Send("^o")          ; Win + O → Open
+
+#t::Send("^t")          ; Win + T → New Tab
+#w::Send("^w")          ; Win + W → Close Tab/Window
+#q::Send("!{F4}")       ; Win + Q → Quit (Alt+F4)
+
+#Tab::Send("^{Tab}")    ; Win + Tab → Cycle tabs (in-app)
+#Space::Send("#{s}")    ; Win + Space → Windows Search
+
+; Open Run dialog, do not open Game Bar
+#r::Run("explorer.exe shell:::{2559a1f3-21d7-11d4-bdaf-00c04f60b9f0}")
+
+{{ end -}}
