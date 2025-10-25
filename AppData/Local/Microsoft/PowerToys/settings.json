@@ -9,7 +9,7 @@
         "ColorPicker": true,
         "CropAndLock": true,
         "EnvironmentVariables": true,
-        "FancyZones": true,
+        "FancyZones": false,
         "File Explorer": true,
         "File Locksmith": true,
         "FindMyMouse": true,
