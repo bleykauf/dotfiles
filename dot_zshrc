@@ -35,6 +35,7 @@ fi
 
 # Load plugins with Zinit
 zinit light zdharma-continuum/fast-syntax-highlighting
+zinit light zsh-users/zsh-autosuggestions
  zinit load 'zsh-users/zsh-history-substring-search'
  zinit ice wait atload '_history_substring_search_config'
 
