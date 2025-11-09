@@ -11,7 +11,7 @@ notice = true
 [[blocks]]
 type = 'prompt'
 alignment = 'left'
-newline = true
+newline = false
 
 [[blocks.segments]]
 type = 'path'
