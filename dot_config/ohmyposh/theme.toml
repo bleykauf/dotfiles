@@ -11,11 +11,43 @@ notice = true
 [[blocks]]
 type = 'prompt'
 alignment = 'left'
+newline = true
 
 [[blocks.segments]]
-style = 'diamond'
-foreground = 'black'
-background = 'blue'
-leading_diamond = ''
-trailing_diamond = ''
 type = 'path'
+style = 'plain'
+foreground = 'blue'
+background = 'transparent'
+template = '{{ .Path }}'
+
+[blocks.segments.properties]
+style = 'full'
+
+[[blocks]]
+type = 'prompt'
+alignment = 'right'
+
+[[blocks.segments]]
+type = 'git'
+style = 'diamond'
+leading_diamond = ''
+trailing_diamond = ''
+foreground = 'black'
+background = 'white'
+
+[[blocks]]
+type = 'prompt'
+alignment = 'left'
+newline = true
+
+[[blocks.segments]]
+type = 'text'
+style = 'plain'
+foreground = 'blue'
+background = 'transparent'
+template = '❯'
+
+[transient_prompt]
+foreground = 'white'
+background = 'transparent'
+template = '❯ '
