@@ -46,3 +46,6 @@ eval "$(uv generate-shell-completion zsh)"
 
 # Initialize zoxide and map it to cd
 eval "$(zoxide init zsh --cmd cd)"
+
+# Define aliases
+alias ls="eza --group-directories-first"
