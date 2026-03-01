@@ -6,6 +6,13 @@ Use this workflow to keep installed packages tracked in this repo.
 
 1. Edit the package list in [run_onchange_before_install-packages-darwin.sh.tmpl](run_onchange_before_install-packages-darwin.sh.tmpl).
 2. Add or remove lines like `brew "<package>"` in the `brew bundle` block.
+	- To capture only non-dependency formulae you installed manually:
+
+```shell
+brew leaves
+```
+
+	- Copy each formula name into the template as `brew "<package>"` entries.
 3. Apply your chezmoi config so the script runs and installs changes:
 
 ```shell
