@@ -1,13 +1,14 @@
 {{- if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
-brew bundle --file=/dev/stdin <<EOF
-brew "coreutils"
-brew "eza"
-brew "git"
-brew "git-lfs"
-brew "hdf5"
-brew "zoxide"
-brew "glances"
-EOF
+brewfile_source="${HOMEBREW_BUNDLE_FILE:-$HOME/Brewfile}"
+brewfile_repo="{{ .chezmoi.sourceDir }}/Brewfile"
+
+if [[ -f "$brewfile_source" ]]; then
+	if [[ ! -f "$brewfile_repo" ]] || ! cmp -s "$brewfile_source" "$brewfile_repo"; then
+		cp "$brewfile_source" "$brewfile_repo"
+	fi
+fi
+
+brew bundle --file="$brewfile_source"
 {{- end -}}

@@ -4,16 +4,19 @@
 
 Use this workflow to keep installed packages tracked in this repo.
 
-1. Edit the package list in [run_onchange_before_install-packages-darwin.sh.tmpl](run_onchange_before_install-packages-darwin.sh.tmpl).
-2. Add or remove lines like `brew "<package>"` in the `brew bundle` block.
-	- To capture only non-dependency formulae you installed manually:
+1. Update your system Brewfile (source of truth):
 
 ```shell
-brew leaves
+brew bundle dump --file="${HOMEBREW_BUNDLE_FILE:-$HOME/Brewfile}" --force
 ```
 
-	- Copy each formula name into the template as `brew "<package>"` entries.
-3. Apply your chezmoi config so the script runs and installs changes:
+2. Add the system Brewfile to chezmoi so the repo tracks it:
+
+```shell
+chezmoi add "${HOMEBREW_BUNDLE_FILE:-$HOME/Brewfile}"
+```
+
+3. Apply the chezmoi config so the bundle script runs:
 
 ```shell
 chezmoi apply
@@ -25,7 +28,7 @@ chezmoi apply
 brew list
 ```
 
-5. Commit the template change so the repo stays the source of truth.
+5. Commit the updated [Brewfile](Brewfile) so the repo tracks the system source of truth.
 
 ## Oh-my-posh
 
