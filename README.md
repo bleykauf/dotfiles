@@ -4,13 +4,13 @@
 
 Use this workflow to keep installed packages tracked in this repo.
 
-1. Update your system Brewfile (source of truth):
+1. Update your system `Brewfile` (source of truth):
 
 ```shell
 brew bundle dump --file="${HOMEBREW_BUNDLE_FILE:-$HOME/Brewfile}" --force
 ```
 
-2. Add the system Brewfile to chezmoi so the repo tracks it:
+2. Add the system `Brewfile` to chezmoi, so the repo tracks it:
 
 ```shell
 chezmoi add "${HOMEBREW_BUNDLE_FILE:-$HOME/Brewfile}"
@@ -28,7 +28,7 @@ chezmoi apply
 brew list
 ```
 
-5. Commit the updated [Brewfile](Brewfile) so the repo tracks the system source of truth.
+5. Commit the updated [`Brewfile`](Brewfile), so the repo tracks the system source of truth.
 
 ## Oh-my-posh
 
