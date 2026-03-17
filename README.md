@@ -30,6 +30,16 @@ brew list
 
 5. Commit the updated [`Brewfile`](Brewfile), so the repo tracks the system source of truth.
 
+## Rustup (macOS)
+
+If Homebrew warns that `rustup` is keg-only, this repo already prepends `/opt/homebrew/opt/rustup/bin` in `dot_zprofile`.
+
+After installing `rustup`, run this once to initialize the default toolchain:
+
+```shell
+rustup default stable
+```
+
 ## Oh-my-posh
 
 Start with a new theme:
