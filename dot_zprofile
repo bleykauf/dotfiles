@@ -1,1 +1,7 @@
 eval "$(/opt/homebrew/bin/brew shellenv)" 
+
+# Ensure keg-only rustup shims win over Homebrew's rust binaries.
+# https://rust-lang.github.io/rustup/installation/already-installed-rust.html
+if [[ -d /opt/homebrew/opt/rustup/bin ]]; then
+	export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
+fi
