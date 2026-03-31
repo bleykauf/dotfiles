@@ -19,7 +19,7 @@ final_space = true
 
   [[blocks.segments]]
     template = '{{ .Path }}'
-    foreground = 'blue'
+    foreground = 'cyan'
     background = 'transparent'
     type = 'path'
     style = 'plain'
@@ -34,8 +34,8 @@ final_space = true
   [[blocks.segments]]
     leading_diamond = ''
     trailing_diamond = ''
-    foreground = 'black'
-    background = 'white'
+    foreground = 'white'
+    background = 'blue'
     type = 'git'
     style = 'diamond'
 
