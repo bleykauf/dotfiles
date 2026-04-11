@@ -1,0 +1,1 @@
+oh-my-posh init pwsh --config "$HOME/.config/ohmyposh/theme.toml" | Invoke-Expression
