@@ -8,4 +8,5 @@ dot_config/kitty/
 
 {{ if ne .chezmoi.os "windows" }}
 AppData/**
+Documents/PowerShell/
 {{ end }}

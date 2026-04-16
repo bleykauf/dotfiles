@@ -47,3 +47,42 @@ Start with a new theme:
 ```shell
 oh-my-posh config export --config powerlevel10k_rainbow --format toml --output ~/.config/ohmyposh/powerlevel10k_rainbow.toml
 ```
+
+The shared theme in this repo is [`dot_config/ohmyposh/theme.toml`](dot_config/ohmyposh/theme.toml).
+
+- macOS uses it from `dot_zshrc` with zsh init.
+- Windows uses it from `Documents/PowerShell/Microsoft.PowerShell_profile.ps1` with pwsh init.
+
+### Oh-my-posh (Windows)
+
+Uses **PowerShell 7 (pwsh)** only. Canonical installation is managed via chezmoi using winget.
+
+1. Apply your chezmoi config:
+
+```powershell
+chezmoi apply
+```
+
+This runs [`run_onchange_before_install-packages-windows.ps1.tmpl`](run_onchange_before_install-packages-windows.ps1.tmpl), which installs `JanDeDobbeleer.OhMyPosh` via winget if missing.
+
+2. **Important:** Configure Windows Terminal to launch PowerShell 7 by default:
+   - Open Windows Terminal settings (Ctrl+,)
+   - In the JSON settings, ensure your default profile points to PowerShell 7:
+   ```json
+   "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}"
+   ```
+   - Or select "PowerShell" (not "Windows PowerShell") from the dropdown and set as default.
+
+3. Open a new PowerShell 7 session (or reload profile):
+
+```powershell
+. $PROFILE
+```
+
+4. Verify:
+
+```powershell
+oh-my-posh --version
+$PSVersionTable.PSVersion
+winget list --id JanDeDobbeleer.OhMyPosh --exact --source winget
+```
