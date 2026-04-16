@@ -19,7 +19,5 @@ Thumbs.db
 /.cache/chezmoi/*/
 /tmp/chezmoi-* 
 
-# Ignore machine-specific filesóóó
-/private_*
-
+# Ignore secret files
 /secret_*
