@@ -1,0 +1,148 @@
+{
+    "editor.rulers": [
+        88
+    ],
+    "diffEditor.renderSideBySide": false,
+    "explorer.confirmDelete": false,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk -xelatex 🔃",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "latexmk (latexmkrc)",
+            "tools": [
+                "latexmk_rconly"
+            ]
+        },
+        {
+            "name": "pdflatex ➞ bibtex ➞ pdflatex",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-xelatex",
+                "--shell-escape",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "latexmk_rconly",
+            "command": "latexmk",
+            "args": [
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+    ],
+    "git.autofetch": true,
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.formatOnType": true
+    },
+    "explorer.confirmDragAndDrop": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.suggestSelection": "first",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "jupyter.askForKernelRestart": false,
+    "editor.inlineSuggest.enabled": true,
+    "settingsSync.ignoredSettings": [
+        "remote.SSH.configFile",
+    ],
+    "editor.minimap.enabled": false,
+    "terminal.integrated.fontFamily": "MesloLGS Nerd Font Mono, monospace",
+    "git.confirmSync": false,
+    "githubPullRequests.createOnPublishBranch": "never",
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": false,
+        "markdown": false,
+        "python": true
+    },
+    "githubPullRequests.pullBranch": "never",
+    "editor.accessibilitySupport": "off",
+    "jupyter.interactiveWindow.textEditor.executeSelection": true,
+    "notebook.formatOnSave.enabled": true,
+    "terminal.integrated.commandsToSkipShell": [
+        "matlab.interrupt"
+    ],
+    "files.autoGuessEncoding": true,
+    "evenBetterToml.formatter.allowedBlankLines": 1,
+    "ruff.lineLength": 88,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "editor.inlayHints.enabled": "off",
+    "python.analysis.typeCheckingMode": "standard",
+    "window.confirmSaveUntitledWorkspace": false,
+    "terminal.integrated.fontLigatures.enabled": true,
+    "editor.fontFamily": "MesloLGS Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        },
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "chat.mcp.gallery.enabled": true,
+    "editor.formatOnSave": true,
+    "notebook.defaultFormatter": "charliermarsh.ruff",
+    "chat.viewSessions.orientation": "stacked",
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "workbench.colorTheme": "Dark+",
+    "window.commandCenter": false,
+}
