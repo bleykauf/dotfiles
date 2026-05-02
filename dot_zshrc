@@ -44,6 +44,9 @@ zinit ice wait atload '_history_substring_search_config'
 . "$HOME/.local/bin/env"
 eval "$(uv generate-shell-completion zsh)"
 
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
 # Initialize zoxide and map it to cd
 eval "$(zoxide init zsh --cmd cd)"
 

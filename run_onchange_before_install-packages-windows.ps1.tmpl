@@ -1,16 +1,21 @@
 {{- if eq .chezmoi.os "windows" -}}
-$packageId = "JanDeDobbeleer.OhMyPosh"
+$packages = @(
+    "JanDeDobbeleer.OhMyPosh",
+    "junegunn.fzf"
+)
 
 if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
-    throw "winget is required to install $packageId"
+    throw "winget is required to install packages"
 }
 
-$isInstalled = winget list --id $packageId --exact --source winget --accept-source-agreements 2>$null |
-    Select-String -SimpleMatch $packageId -Quiet
+foreach ($packageId in $packages) {
+    $isInstalled = winget list --id $packageId --exact --source winget --accept-source-agreements 2>$null |
+        Select-String -SimpleMatch $packageId -Quiet
 
-if (-not $isInstalled) {
-    winget install --id $packageId --exact --source winget --accept-source-agreements --accept-package-agreements
-} else {
-    winget upgrade --id $packageId --exact --source winget --accept-source-agreements --accept-package-agreements
+    if (-not $isInstalled) {
+        winget install --id $packageId --exact --source winget --accept-source-agreements --accept-package-agreements
+    } else {
+        winget upgrade --id $packageId --exact --source winget --accept-source-agreements --accept-package-agreements
+    }
 }
 {{- end -}}
