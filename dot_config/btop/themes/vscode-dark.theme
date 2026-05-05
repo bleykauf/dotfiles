@@ -1,0 +1,75 @@
+# VS Code Dark theme for btop
+# Colors sourced from the VS Code Dark terminal palette (as configured in Kitty)
+
+# Main background — matches VS Code editor background
+theme[main_bg]="#1E1E1E"
+
+# Main text color
+theme[main_fg]="#CCCCCC"
+
+# Title color for boxes
+theme[title]="#3B8EEA"
+
+# Highlight color for keyboard shortcuts
+theme[hi_fg]="#29B8DB"
+
+# Background color of selected item in processes box
+theme[selected_bg]="#264F78"
+
+# Foreground color of selected item in processes box
+theme[selected_fg]="#E5E5E5"
+
+# Color of inactive/disabled text
+theme[inactive_fg]="#666666"
+
+# Misc colors for processes box
+theme[proc_misc]="#11A8CD"
+
+# Box outline colors
+theme[cpu_box]="#2472C8"
+theme[mem_box]="#0DBC79"
+theme[net_box]="#11A8CD"
+theme[proc_box]="#3B8EEA"
+
+# Box divider line
+theme[div_line]="#666666"
+
+# Temperature graph: green -> yellow -> red
+theme[temp_start]="#23D18B"
+theme[temp_mid]="#F5F543"
+theme[temp_end]="#F14C4C"
+
+# CPU graph: green -> blue -> red
+theme[cpu_start]="#23D18B"
+theme[cpu_mid]="#3B8EEA"
+theme[cpu_end]="#F14C4C"
+
+# Mem/Disk free meter: green
+theme[free_start]="#23D18B"
+theme[free_mid]="#0DBC79"
+theme[free_end]="#23D18B"
+
+# Mem/Disk cached meter: cyan
+theme[cached_start]="#29B8DB"
+theme[cached_mid]="#11A8CD"
+theme[cached_end]="#29B8DB"
+
+# Mem/Disk available meter: blue
+theme[available_start]="#3B8EEA"
+theme[available_mid]="#2472C8"
+theme[available_end]="#3B8EEA"
+
+# Mem/Disk used meter: yellow -> red
+theme[used_start]="#F5F543"
+theme[used_mid]="#F14C4C"
+theme[used_end]="#F14C4C"
+
+# Download graph: green
+theme[download_start]="#23D18B"
+theme[download_mid]="#0DBC79"
+theme[download_end]="#23D18B"
+
+# Upload graph: blue
+theme[upload_start]="#3B8EEA"
+theme[upload_mid]="#2472C8"
+theme[upload_end]="#3B8EEA"
