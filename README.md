@@ -2,18 +2,12 @@
 
 ## Setup
 
-### macOS / Linux
+### Linux
 
 Install chezmoi and apply this repo in one step:
 
 ```shell
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply bleykauf/dotfiles
-```
-
-Or, if chezmoi is already installed:
-
-```shell
-chezmoi init --apply bleykauf/dotfiles
+sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply bleykauf/dotfiles
 ```
 
 ### Windows
