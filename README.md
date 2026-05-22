@@ -1,5 +1,48 @@
 # dotfiles
 
+## Setup
+
+### macOS / Linux
+
+Install chezmoi and apply this repo in one step:
+
+```shell
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply bleykauf/dotfiles
+```
+
+Or, if chezmoi is already installed:
+
+```shell
+chezmoi init --apply bleykauf/dotfiles
+```
+
+### Windows
+
+Install chezmoi via winget, then apply this repo:
+
+```powershell
+winget install twpayne.chezmoi
+chezmoi init --apply bleykauf/dotfiles
+```
+
+Or use the one-liner with PowerShell:
+
+```powershell
+(irm -UseBasicParsing https://get.chezmoi.io/ps1) | powershell -c -
+chezmoi init --apply bleykauf/dotfiles
+```
+
+### Source directory
+
+The chezmoi source directory (this repo) is located at:
+
+| Platform | Path |
+|----------|------|
+| macOS / Linux | `~/.local/share/chezmoi` |
+| Windows | `%USERPROFILE%\.local\share\chezmoi` |
+
+---
+
 ## Homebrew packages (macOS)
 
 Use this workflow to keep installed packages tracked in this repo.

@@ -29,7 +29,7 @@ autoload -Uz compinit
 compinit
 
 # Skip Oh My Posh initialization for Apple Terminal
-if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ] && command -v oh-my-posh &>/dev/null; then
   eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/theme.toml)"
 fi
 
@@ -41,15 +41,27 @@ zinit ice wait atload '_history_substring_search_config'
 
 
 # Load uv and enable shell completions
-. "$HOME/.local/bin/env"
-eval "$(uv generate-shell-completion zsh)"
+if [[ -f "$HOME/.local/bin/env" ]]; then
+  . "$HOME/.local/bin/env"
+fi
+if command -v uv &>/dev/null; then
+  eval "$(uv generate-shell-completion zsh)"
+fi
 
 # Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
+if command -v fzf &>/dev/null; then
+  source <(fzf --zsh)
+fi
 
 # Initialize zoxide and map it to cd
-eval "$(zoxide init zsh --cmd cd)"
+if command -v zoxide &>/dev/null; then
+  eval "$(zoxide init zsh --cmd cd)"
+fi
 
 # Define aliases
-alias ls="eza --group-directories-first"
-alias ssh="kitten ssh"
+if command -v eza &>/dev/null; then
+  alias ls="eza --group-directories-first"
+fi
+if command -v kitten &>/dev/null; then
+  alias ssh="kitten ssh"
+fi

@@ -1,0 +1,49 @@
+{{- if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+
+set -euo pipefail
+
+sudo apt-get update -qq
+
+# zsh
+if ! command -v zsh &>/dev/null; then
+    sudo apt-get install -y zsh
+fi
+
+# Set zsh as default shell if not already
+if [[ "$SHELL" != "$(which zsh)" ]]; then
+    chsh -s "$(which zsh)"
+fi
+
+# fzf
+if ! command -v fzf &>/dev/null; then
+    sudo apt-get install -y fzf
+fi
+
+# eza (via official apt repo)
+if ! command -v eza &>/dev/null; then
+    sudo mkdir -p /etc/apt/keyrings
+    wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc \
+        | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
+    echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" \
+        | sudo tee /etc/apt/sources.list.d/gierens.list
+    sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
+    sudo apt-get update -qq
+    sudo apt-get install -y eza
+fi
+
+# zoxide
+if ! command -v zoxide &>/dev/null; then
+    curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+fi
+
+# oh-my-posh
+if ! command -v oh-my-posh &>/dev/null; then
+    curl -s https://ohmyposh.dev/install.sh | bash -s
+fi
+
+# uv
+if ! command -v uv &>/dev/null; then
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+fi
+{{- end -}}
