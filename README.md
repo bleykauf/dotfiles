@@ -77,6 +77,16 @@ After installing `rustup`, run this once to initialize the default toolchain:
 rustup default stable
 ```
 
+## Docker (WSL)
+
+Docker Desktop on Windows can expose the Docker daemon to WSL distros. To enable it:
+
+1. Open Docker Desktop → **Settings** → **Resources** → **WSL integration**
+2. Enable **"Enable integration with my default WSL distro"** and/or toggle on your specific distro (e.g. Ubuntu)
+3. Click **Apply & Restart**
+
+After this, `docker` commands work inside WSL without installing a separate Docker daemon.
+
 ## Oh-my-posh
 
 Start with a new theme:
