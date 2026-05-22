@@ -49,8 +49,9 @@ if command -v uv &>/dev/null; then
 fi
 
 # Set up fzf key bindings and fuzzy completion
+# fzf --zsh requires >= 0.48.0; silently no-ops on older apt versions
 if command -v fzf &>/dev/null; then
-  source <(fzf --zsh)
+  source <(fzf --zsh 2>/dev/null)
 fi
 
 # Initialize zoxide and map it to cd
