@@ -39,7 +39,6 @@ zinit light zsh-users/zsh-autosuggestions
 zinit load 'zsh-users/zsh-history-substring-search'
 zinit ice wait atload '_history_substring_search_config'
 
-
 # Load uv and enable shell completions
 if [[ -f "$HOME/.local/bin/env" ]]; then
   . "$HOME/.local/bin/env"
