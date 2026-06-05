@@ -54,8 +54,8 @@ if command -v fzf &>/dev/null; then
   source <(fzf --zsh 2>/dev/null)
 fi
 
-# Initialize zoxide and map it to cd
-if command -v zoxide &>/dev/null; then
+# Initialize zoxide and map it to cd if interactive and zoxide is available
+if [[ -o interactive ]] && command -v zoxide &>/dev/null; then
   eval "$(zoxide init zsh --cmd cd)"
 fi
 
