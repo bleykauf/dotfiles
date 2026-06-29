@@ -32,8 +32,8 @@ final_space = true
   alignment = 'right'
 
   [[blocks.segments]]
-    leading_diamond = ''
-    trailing_diamond = ''
+    leading_diamond = ''
+    trailing_diamond = ''
     template = ' {{ .HostName }} '
     foreground = 'white'
     background = 'green'
@@ -44,8 +44,8 @@ final_space = true
       ssh_only = true
 
   [[blocks.segments]]
-    leading_diamond = ''
-    trailing_diamond = ''
+    leading_diamond = ''
+    trailing_diamond = ''
     foreground = 'white'
     background = 'blue'
     type = 'git'
