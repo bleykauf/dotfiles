@@ -1,28 +1,22 @@
 {{- if eq .chezmoi.os "linux" -}}
 #!/bin/bash
+# aptfile-hash: {{ include "dot_Aptfile" | sha256sum }}
 
 set -euo pipefail
 
 sudo apt-get update -qq
 
-# zsh
-if ! command -v zsh &>/dev/null; then
-    sudo apt-get install -y zsh
-fi
+# Install packages from ~/.Aptfile
+mapfile -t packages < <(grep -v '^\s*#' "$HOME/.Aptfile" | grep -v '^\s*$')
+sudo apt-get install -y "${packages[@]}"
 
 # Set zsh as default shell if not already
 if [[ "$SHELL" != "$(which zsh)" ]]; then
     chsh -s "$(which zsh)"
 fi
 
-# fzf
-if ! command -v fzf &>/dev/null; then
-    sudo apt-get install -y fzf
-fi
-
 # eza (via official apt repo)
 if ! command -v eza &>/dev/null; then
-    sudo apt-get install -y gpg
     sudo mkdir -p /etc/apt/keyrings
     wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc \
         | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
@@ -38,9 +32,8 @@ if ! command -v zoxide &>/dev/null; then
     curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 fi
 
-# oh-my-posh (requires unzip)
+# oh-my-posh
 if ! command -v oh-my-posh &>/dev/null; then
-    sudo apt-get install -y unzip
     curl -s https://ohmyposh.dev/install.sh | bash -s
 fi
 

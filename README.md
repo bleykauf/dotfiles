@@ -89,6 +89,32 @@ The `--bin` flag skips the shell integration setup (already handled by `.zshrc`)
 
 ---
 
+## apt packages (Linux)
+
+The [`dot_Aptfile`](dot_Aptfile) is the source of truth for apt packages on Linux. The install script reads it on every `chezmoi apply` and installs any new packages. Use this workflow to add packages:
+
+1. Add the package to `~/.Aptfile`:
+
+```shell
+echo "htop" >> ~/.Aptfile
+```
+
+2. Copy it back to chezmoi:
+
+```shell
+chezmoi add ~/.Aptfile
+```
+
+3. Apply so the install script runs:
+
+```shell
+chezmoi apply
+```
+
+4. Commit the updated [`dot_Aptfile`](dot_Aptfile).
+
+---
+
 ## Homebrew packages (macOS)
 
 Use this workflow to keep installed packages tracked in this repo.

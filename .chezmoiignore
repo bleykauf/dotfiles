@@ -10,3 +10,7 @@ dot_config/kitty/
 AppData/**
 Documents/PowerShell/
 {{ end }}
+
+{{ if ne .chezmoi.os "linux" -}}
+dot_Aptfile
+{{ end -}}
