@@ -34,7 +34,7 @@ final_space = true
   [[blocks.segments]]
     leading_diamond = ''
     trailing_diamond = ''
-    template = ' 󰣀 {{ .HostName }}'
+    template = ' {{ .HostName }} '
     foreground = 'white'
     background = 'green'
     type = 'session'
