@@ -74,6 +74,21 @@ winget install DEVCOM.JetBrainsMonoNerdFont
 
 ---
 
+## fzf
+
+**macOS:** Installed automatically via Homebrew — no manual steps needed.
+
+**Linux:** The install script installs fzf via apt, which may be outdated (notably on Raspberry Pi / older Debian). The `--zsh` flag for key bindings and fuzzy history search (Ctrl+R) requires fzf ≥ 0.48. To install a newer version locally:
+
+```shell
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install --bin
+```
+
+The `--bin` flag skips the shell integration setup (already handled by `.zshrc`). The local install at `~/.fzf/bin` takes priority over the system package automatically.
+
+---
+
 ## Homebrew packages (macOS)
 
 Use this workflow to keep installed packages tracked in this repo.
