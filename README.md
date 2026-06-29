@@ -37,6 +37,43 @@ The chezmoi source directory (this repo) is located at:
 
 ---
 
+## Post-install steps
+
+### Nerd Font (all platforms)
+
+The oh-my-posh theme uses Powerline glyphs that require a [Nerd Font](https://www.nerdfonts.com). Install one and configure your terminal to use it.
+
+**Linux:** Download and install the font on the machine running your terminal emulator (i.e. the machine whose display you're using), then refresh the font cache and set it in your terminal emulator's preferences:
+
+```shell
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts
+curl -fLO https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
+unzip FiraCode.zip -d FiraCode
+rm FiraCode.zip
+fc-cache -fv
+```
+
+**Linux (WSL):** The terminal emulator is Windows Terminal, so install the font on Windows instead. Download a Nerd Font from [nerdfonts.com](https://www.nerdfonts.com/font-downloads), install it on Windows, then set it in Windows Terminal: Settings → your profile → Appearance → Font face.
+
+**macOS:** Install via Homebrew and set it in your terminal's font preferences:
+
+```shell
+brew install --cask font-fira-code-nerd-font
+```
+
+**Windows:** Install via winget and set it in Windows Terminal: Settings → your profile → Appearance → Font face:
+
+```powershell
+winget install DEVCOM.JetBrainsMonoNerdFont
+```
+
+### New shell session (Linux only)
+
+`chezmoi apply` runs `chsh` to set zsh as the default shell. The change takes effect on the next login — open a new terminal window after the apply finishes.
+
+---
+
 ## Homebrew packages (macOS)
 
 Use this workflow to keep installed packages tracked in this repo.
