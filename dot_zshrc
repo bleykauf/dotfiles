@@ -67,3 +67,6 @@ fi
 if command -v kitten &>/dev/null; then
   alias ssh="kitten ssh"
 fi
+if command -v ncdu &>/dev/null; then
+  alias ncdu="ncdu --color dark"
+fi
